@@ -10,34 +10,47 @@ reduced by algorithmic design choices (M1–M3).**
 > **Repository status & how to read it.** This is a research repository documenting a
 > working analysis pipeline, organized around an evidentiary structure that keeps
 > pre-specified confirmatory hypotheses distinct from post-hoc exploratory research
-> questions, and is intended as the working basis for a future manuscript rather than a
-> publication itself. Every claim below carries an explicit evidence tag —
-> **[CONFIRMATORY]**, **[POST-HOC / EXPLORATORY]**, **[POST-HOC / FURTHER EXPLORATORY]**,
-> or **[FUTURE WORK]** — so a reader can calibrate confidence at a glance: read §5 (H1, H2)
-> alone for the pre-registered-style result; continue to §6 (RQ2a–RQ2c) to see why H2's
-> heterogeneity was not perfectly uniform; continue to §16 (M1–M3), the newest and most
-> exploratory tier, to see whether that heterogeneity can be narrowed algorithmically. As
-> the analysis progressed, a few framing and naming choices were refined along the way,
-> and both the earlier and later versions are kept on record in
-> `docs/METHODOLOGY_NOTES.md` as a matter of methodological transparency. Most notably,
-> the post-hoc investigation into H2's heterogeneity — originally numbered "H3" — is now
-> presented as three explicitly-named research questions (RQ2a/RQ2b/RQ2c), reserving
-> "hypothesis" for H1 and H2, the two claims genuinely fixed in advance; no underlying
-> statistic changed, only the names and section boundaries (entry B7). A small number of
-> legacy figure legends and script variables still carry the earlier "H3" label internally
-> — mapped in `appendix/hypothesis_id_legacy_mapping.md` for reference. This is a research
-> repository, not a publication, and nothing here should be cited as a peer-reviewed
-> result.
+> questions. It is the companion repository to the manuscript *Auditing Advertiser-Size
+> Effects in Sponsored Search Markets: Serving Mechanisms and Heterogeneous Pricing
+> Outcomes* and is not itself a publication; where wording differs, the manuscript and its
+> Online Resource 1 are the authoritative statement of results. Every claim below carries
+> an explicit evidence tag — **[CONFIRMATORY]**, **[POST-HOC / EXPLORATORY]**,
+> **[POST-HOC / FURTHER EXPLORATORY]**, or **[FUTURE WORK]** — so a reader can calibrate
+> confidence at a glance: read §5 (H1, H2) alone for the pre-registered-style result;
+> continue to §6 (RQ2a–RQ2c) to see why H2's heterogeneity was not perfectly uniform;
+> continue to §16 (M1–M3), the newest and most exploratory tier, to see whether that
+> heterogeneity can be narrowed algorithmically. As the analysis progressed, a few framing
+> and naming choices were refined along the way, and both the earlier and later versions
+> are kept on record in `docs/METHODOLOGY_NOTES.md` as a matter of methodological
+> transparency. Most notably, the post-hoc investigation into H2's heterogeneity —
+> originally numbered "H3" — is now presented as three explicitly-named research questions
+> (RQ2a/RQ2b/RQ2c), reserving "hypothesis" for H1 and H2, the two claims genuinely fixed in
+> advance; no underlying statistic changed, only the names and section boundaries (entry
+> B7). A small number of legacy figure legends and script variables still carry the earlier
+> "H3" label internally — mapped in `appendix/hypothesis_id_legacy_mapping.md` for
+> reference. This is a research repository, not a publication, and nothing here should be
+> cited as a peer-reviewed result.
+
+> **Mapping to the manuscript.** The manuscript organizes the same analyses into three
+> evidentiary tiers and three research questions: **Tier 1 / Study 1** (confirmatory) =
+> H1 and H2 (§5), which answer the manuscript's RQ1 and the confirmatory part of RQ2;
+> **Tier 2 / Study 2** (post hoc) = RQ2a–RQ2c (§6), which answer where, why and how
+> sensitively the heterogeneity arises; **Tier 3 / exploratory extension** (gated) =
+> M1–M3 (§16), which answer the manuscript's RQ3. Supplementary tables and figures that the
+> manuscript places in *Online Resource 1* (Tables S1–S8, Figs. S1–S5) correspond to the
+> appendix-level material in this repository. Note that "Study 2" in Appendix B of this
+> README is a legacy name for a separate, descoped companion study and is **not** the
+> manuscript's Study 2.
 
 > **Disclosure and data availability.** One author is Director of the Technology Research
-> Institute at SearchM Co., Ltd., the data provider; the other authors have no financial or
-> employment relationship with SearchM. Study design and variable selection were determined
-> independently of SearchM, all confirmatory hypotheses, models, and the robustness and
-> multiplicity plan were specified before that author accessed estimation results, and
-> SearchM's review was limited to disclosure compliance. The raw data are proprietary and
-> not publicly redistributable; this repository releases the analysis code, fixed random
-> seeds, and a schema-matched synthetic replication dataset sufficient to run the full
-> pipeline end-to-end.
+> Institute at the data provider (named on the manuscript's title page); the other authors
+> have no financial or employment relationship with the data provider. Study design and
+> variable selection were determined independently of the data provider, all confirmatory
+> hypotheses, models, and the robustness and multiplicity plan were specified before that
+> author accessed estimation results, and the data provider's review was limited to
+> disclosure compliance. The raw data are proprietary and not publicly redistributable;
+> this repository releases the analysis code, fixed random seeds, and a schema-matched
+> synthetic replication dataset sufficient to run the full pipeline end-to-end.
 
 > **A note on labels and figures in this version.** Figures 1 and 4 carry embedded titles
 > referencing internal `Ad_Advance` v4 pipeline-stage numbers (stage 1 = the variance
@@ -50,21 +63,20 @@ reduced by algorithmic design choices (M1–M3).**
 > **M1–M3** (Mitigation questions) from first draft, chosen deliberately to avoid
 > colliding with Figure 4's existing internal label (entry B8); §16 is **[POST-HOC /
 > EXPLORATORY]** throughout and is additive to, not a revision of, the H1/H2/RQ2a–c
-> conclusions above it. Of the eighteen figures generated for this project, eleven carry
+> conclusions above it. Of the nineteen figures generated for this project, twelve carry
 > the main argument and are embedded inline in §5, §6, §7, and §16; the remainder are
 > collected in **[Appendix A](#appendix-a--supplementary-figures)** (supplementary, not
 > needed on a first read) and **[Appendix B](#appendix-b--out-of-scope-figures-study-2)**
 > (figures from a separate companion study, included for completeness), with the full
 > figure-to-section map in §13.
 
-> **A note on downstream use.** This repository is written as *preparatory research
-> material* — the evidentiary scaffolding, robustness checks, and figure set a future
-> manuscript would draw on — rather than as manuscript prose itself. Journal-facing
-> framing (literature review depth, managerial-implications narrative, abstract, formal
-> hypothesis numbering conventions) is intentionally left for a separate paper-writing
-> pass; what is preserved and strengthened here is the underlying evidentiary structure,
-> the full figure set, and the repository organization those downstream materials will be
-> built from.
+> **A note on downstream use.** This repository is the evidentiary scaffolding behind the
+> manuscript — the robustness checks, full figure set, and repository organization its
+> analyses were built from — rather than manuscript prose itself. Journal-facing framing
+> (literature review, managerial-implications narrative, abstract, formal hypothesis
+> numbering conventions) lives in the manuscript; what is preserved and strengthened here is
+> the underlying evidentiary structure, the full figure set, and the repository
+> organization.
 
 ---
 
@@ -117,17 +129,19 @@ tier substitutes for another, and a research-wide multiplicity audit (§7) pools
 confirmatory and post-hoc p-values: 7 survive Bonferroni and 14 survive Benjamini–Hochberg
 FDR. Surviving correction does not upgrade any post-hoc test's status.
 
-**Why this matters (draft framing, to be developed in the paper).** The platform studied
-here is an algorithmically-mediated e-commerce advertising marketplace — the same class of
-system studied in the sponsored-search auction-design literature (e.g. generalized
-second-price auctions, position auctions) and in the algorithmic-fairness/audit
-literature. Whether comparably spending advertisers of different sizes face comparable
-prices is a question about market access for small businesses. The H1/H2 result speaks to
-whether such systems reproduce structural incumbency advantage independent of current
-behavior; the RQ2 results speak to where that guarantee may not apply (segments served
-outside keyword auctions); the M-series is an exploratory check of how a size-blind change
-behaves across model classes. See Appendix C for literature anchors relevant to both
-streams.
+**Why this matters (framing as used in the manuscript).** The platform studied here is an
+algorithmically-mediated e-commerce advertising marketplace — the same class of system
+studied in the sponsored-search auction-design literature (e.g. generalized second-price
+auctions, position auctions) and in the algorithmic-fairness/audit literature. Whether
+comparably spending advertisers of different sizes face comparable prices is a question
+about market access for small businesses. The H1/H2 result speaks to whether such systems
+reproduce structural incumbency advantage independent of current behavior; the RQ2 results
+speak to where that guarantee may not apply (segments served outside keyword auctions); the
+M-series is an exploratory check of how a size-blind change behaves across model classes.
+The practical message for platform operators, advertisers and auditors is to test SSI
+separately for each serving mechanism and report segment-level directions instead of a
+single pooled average, because a pooled estimate can mask opposite-signed segment patterns.
+See Appendix C for literature anchors relevant to both streams.
 
 ---
 
@@ -184,7 +198,7 @@ independent, pre-specified-model-class re-test (M2/M3) — see §16.1–§16.3.
 ### 3.1 Two competing accounts (H1's object of test)
 
 - **Statistical discrimination / structural entrenchment** (Phelps 1972; Arrow 1973;
-  Spence 1973): a decision-maker facing incomplete information about counterparty quality
+  Spence 1978): a decision-maker facing incomplete information about counterparty quality
   falls back on cheap, observable, structural proxies — here, advertiser size — even when
   a more direct behavioral signal (spend) is available. Predicts a **significant residual
   association** of size with outcomes, net of spend.
@@ -195,26 +209,31 @@ independent, pre-specified-model-class re-test (M2/M3) — see §16.1–§16.3.
 ### 3.2 Structural Signal Irrelevance (SSI)
 
 > **Definition.** In an algorithmically-mediated market, let S be a structural attribute
-> (size), B a legitimate behavioral signal (spend), Y an algorithmic outcome. The system
-> exhibits **structural signal irrelevance with respect to S** when Y ⊥ S | (B, X) holds —
-> assessed via decomposition of S's association with Y into a path mediated by B and a
-> direct residual path net of B.
+> (size), B a legitimate behavioral signal (spend), X pre-specified covariates, and Y an
+> algorithmic outcome. The system exhibits **structural signal irrelevance with respect to
+> S** when Y ⊥ S | (B, X) holds — assessed via decomposition of S's association with Y into
+> a path mediated by B and a direct residual path net of B.
 
-A single confirmatory null on H1c is evidence *toward* SSI; a robust SSI claim rests on
-convergence across independent robustness methods (achieved for the primary outcome, §5)
-and, ideally, replication across contexts (attempted, at exploratory strength, in §6).
-Naming the pattern itself as a construct — rather than resting on the two competing
+The criterion tests not unconditional fairness but whether, among advertisers spending
+comparably, size carries an additional advantage. A single confirmatory null on H1c is
+evidence *toward* SSI; a robust SSI claim additionally requires convergence across
+independent robustness methods (achieved for the primary outcome, §5) and an assessment of
+whether the null generalizes across market segments (attempted, at exploratory strength, in
+§6). Naming the pattern itself as a construct — rather than resting on the two competing
 predictions alone — was itself a considered addition; `docs/METHODOLOGY_NOTES.md` entry A3
 documents that an earlier draft treated stating the two competing predictions as a
 sufficient theoretical contribution, until external review noted this reads as
 theory-*application* rather than theory-*contribution*, since the pattern tested had no
 name as a standalone, system-level property in either literature.
 
-*Note for future paper-writing:* the platform-specific literature this construct should be
-positioned against (sponsored-search auction design, position auctions, algorithmic ranking
-in e-commerce marketplaces) is not yet integrated into this section — see [Appendix C](#appendix-c--literature-anchors-for-future-paper-writing)
-for a working list of anchors to draw on when this repository is converted into a
-manuscript.
+*Note on literature positioning:* the manuscript positions the construct against the
+sponsored-search auction-design literature (e.g. Edelman et al. 2007; Yuan & Zeng 2012;
+Vragov et al. 2019; Celis et al. 2014) and the self-preferencing audit literature
+(Jürgensmeier & Skiera 2025; Farronato et al. 2023; Etro 2024; Katz 2025). The resemblance
+to the self-preferencing literature is structural only: this study concerns advertiser
+size in a third-party auction, not a platform favoring its own products. See
+[Appendix C](#appendix-c--literature-anchors-for-future-paper-writing) for the working
+anchor list.
 
 ### 3.3 Boundary conditions on SSI (P1–P5)
 
@@ -225,13 +244,14 @@ manuscript.
 - **P3 (discretionary review re-entry).** Sub-processes with human discretionary review
   are SSI-violation *candidates* even within an otherwise SSI-consistent system.
 - **P4 (measurability).** SSI can only be evaluated where the behavioral signal and
-  outcome are measured with completeness that does not itself correlate with S. Where it
-  does not (as with Conversion/ROAS, excluded in §4), SSI is **not testable**, not
-  violated. `docs/METHODOLOGY_NOTES.md` entry A2 documents that this began as a plain
+  outcome are measured completely and independently of S. Where they are not (as with
+  Conversion/ROAS, excluded in §4), SSI is **not testable**, not violated.
+  `docs/METHODOLOGY_NOTES.md` entry A2 documents that this began as a plain
   data-quality note ("the conversion API backfills inconsistently") before re-examination
   showed the deeper concern — backfill completeness plausibly correlates with size itself,
   which would manufacture a spurious H1c effect as a measurement artifact rather than a
-  genuine finding.
+  genuine finding. P1–P3 are not tested in this study and are retained as guidance for
+  future audits; P4 governs outcome selection.
 - **P5 (mechanism applicability) — motivated by RQ2b's findings.** The SSI audit
   design presupposes that the outcome is generated by an auction/bidding serving
   mechanism. Where this premise does not hold (in this sample: local-business campaigns,
@@ -255,27 +275,47 @@ manuscript.
 | Ad group dimension (2026-07-22 snapshot) | Bid price, registration timestamps, on/off status | 9,823 | 263/321 |
 | Keyword dimension | Brand type, `inspect_status`, bid price | 1,503,289 | 256/321 |
 
+The declining coverage (321 → 263 → 256) reflects the platform's serving architecture,
+particularly for local-business and shopping campaigns (§6.2), rather than conventional
+item-level missingness.
+
 **Window and size measure.** Spend and outcomes are aggregated at the advertiser level over
 an 11-month window (2025-08-23 to 2026-07-21). Size is the log-transformed campaign count,
-log(1 + n_campaigns), a measure of operational scale not derived from spend; ad-group count
-is numerically identical to campaign count in this sample and is not analyzed separately.
-The primary outcome is the advertiser's mean registered bid (263 advertisers), chosen
-because it does not mechanically depend on billed cost; as an advertiser-set auction input,
-a null here speaks to advertiser behavior net of spend, not by itself to platform
-allocation. Approval rate, log CPC and mean ad rank are platform-assigned (321
-advertisers).
+log(1 + n_campaigns), a measure of operational scale not derived from spend (a
+spend-derived size variable would risk collinearity with the mediator); ad-group count is
+numerically identical to campaign count in this sample and is not analyzed separately. For
+description only, advertisers are labeled "large" or "small" by a median split; regressions
+retain size as a continuous variable. The primary outcome is the advertiser's mean
+registered bid (263 advertisers), chosen because it does not mechanically depend on billed
+cost; as an advertiser-set auction input, a null here speaks to advertiser behavior net of
+spend, not by itself to platform allocation. Approval rate, log CPC and mean ad rank are
+platform-assigned (321 advertisers). The registered bid comes from the ad-group dimension
+table, whose linkage is least complete for local-business and shopping accounts, so H2 is
+estimated on the CPC-based outcome only.
+
+**Sample flow.** The sample narrows in four pre-specified stages: the full performance log
+(n=321), the campaign/ad-group-linked sample (n=263), the core estimation sample for H1 and
+H2 (n=228, after excluding the 35 lowest-spend advertisers under a pre-specified rule), and
+the instrumented subsample (n=98, advertisers active in both halves of the window). All H1
+and H2 estimates refer to the core sample unless stated otherwise. Campaign type has five
+categories (website, local business, shopping, power content, brand/new-product); for
+categorical analyses advertisers with several types are assigned to their plurality-spend
+category, which within the core sample yields website = 184, local business = 27 and
+shopping = 17, with no advertiser having power content or brand/new-product as plurality
+category. The pre-specified H2 stratification therefore uses three categories, while the
+continuous expenditure-share re-specification in §6.1 retains all five.
 
 **Construct-validity exclusion.** Conversion/ROAS variables are excluded from all outcome
-sets by design (P4 above): Naver's conversion-tracking backfill lag is plausibly
-correlated with advertiser size itself, which would risk manufacturing the very
-direct-path pattern H1c is designed to detect as a measurement artifact rather than a
-genuine finding.
+sets by design (P4 above): the platform's conversion-tracking backfill lag is plausibly
+correlated with advertiser size itself (larger advertisers may have more complete
+server-side integrations), which would risk manufacturing the very direct-path pattern H1c
+is designed to detect as a measurement artifact rather than a genuine finding.
 
 **Preliminary structural check.** Before any hypothesis is tested, [Figure 1](#figure-1)
-verifies that the multilevel variance structure of the two headline outcome families (ad
-spend and CTR) sits predominantly at the row/residual level rather than being an artifact
-of campaign- or ad-group-level clustering — motivating the customer-level clustering used
-throughout §5–§6.
+documents the multilevel variance structure of the two headline outcome families (ad spend
+and CTR): about 82% of spend variance is residual, whereas CTR variance is spread across ad
+group, campaign, advertiser and residual levels. Standard errors are clustered at the
+advertiser level throughout §5–§6 because advertisers are the unit of inference.
 
 ---
 
@@ -291,19 +331,19 @@ it was revised after seeing results.
 ![Figure 1 — Multilevel variance decomposition](figures/Figure1_variance_decomposition.png)
 *Figure 1 [CONFIRMATORY, preliminary] — variance decomposition (30-iteration cluster
 bootstrap, n≈663K) of ad spend (log cost) and CTR (logit) across ad-group, campaign,
-customer, and residual levels. For spend, ~80% of variance sits at the residual level
-(ICC≈0.82); for CTR, variance is more evenly spread but still residual-dominant. Close
-agreement between the unconditional (diamond) and month-fixed-effects-conditional (square)
-point estimates at every level indicates the structure is not driven by seasonality, which
-motivates the customer-level clustering used throughout §5–§6.*
+advertiser, and residual levels. For spend, about 82% of variance sits at the residual level
+(ICC≈0.82). For CTR, variance is spread more evenly (ad group ≈.30, campaign ≈.22,
+advertiser ≈.19, residual ≈.28), so residual variance is not dominant. Close agreement
+between the unconditional (diamond) and month-fixed-effects-conditional (square) point
+estimates at every level indicates the structure is not driven by seasonality.*
 
 ### 5.2 H1 — Does advertiser size confer a direct advantage, net of spend?
 
 Controlling for log spend in a cluster-robust regression at the advertiser level (core
 sample n=228), the direct-path coefficient for size is non-significant for both the primary
-(registered bid) and secondary (CPC) outcomes. The observation-level equivalence analysis
-(4,407 records; 3,432 after removing spend-spike observations) returns non-significant
-coefficients in all six outcome × sample cells.
+(registered bid) and secondary (CPC) outcomes. In the observation-level analysis (4,407
+records; 3,432 after removing likely bot-driven spend-spike observations), Bayes factors
+favor the null in all six outcome × sample cells.
 
 | Path | CPC-based (secondary) | bid_amount-based (primary, cost-independent) |
 |---|---|---|
@@ -322,26 +362,32 @@ the primary outcome.
 cost-per-click, and mean ad rank, plotted against the 80%-power minimum-detectable-effect
 (MDE) margins used as equivalence margins, on both the full sample (n=4,407) and after
 excluding spike accounts (n=3,432). Bayes factors favor the null in all six cells
-(BF₁₀ = 0.02–0.06). Equivalence (TOST) holds for CPC in the full sample and for mean ad
-rank in both samples, but not for approval rate or for CPC after the exclusion, where the
-estimate changes sign (−0.10 to +0.35, p=.15).*
+(BF₁₀ = 0.02–0.06). Equivalence (TOST, judged by whether the 90% CI lies inside the margin)
+holds for CPC in the full sample and for mean ad rank in both samples, but not for approval
+rate or for CPC after the exclusion, where the estimate changes sign (−0.10 to +0.35,
+p=.15).*
 
 **Verdict:** H1c is not rejected for the primary outcome (registered bid), where
 equivalence tests and Bayes factors support consistency with SSI on the advertiser-input
-side. For platform-assigned CPC the estimate is negative and marginal (p=.062) and
-equivalence is not established: a tentative signal, neither a violation nor its absence.
-Because the primary equivalence margin (±0.22) is wider than the total effect
-(τ ≈ 0.118), equivalence is supportive rather than decisive. H1a/H1b are supported, and
-the primary-outcome pattern is consistent with full mediation through spend (§5.4).
+side (equivalence margin ±0.22, 90% CI [−0.09, 0.16]; BF₁₀≈0.07, BF₀₁≈13.5). For
+platform-assigned CPC the estimate is negative and marginal (p=.062) and equivalence is not
+established (margin ±0.38, 90% CI [−0.48, −0.03]): a tentative signal of a size advantage
+(larger advertisers pay less per click at the same spend), neither a confirmed violation nor
+its absence. Because the primary equivalence margin (±0.22) is wider than the total effect
+(τ ≈ 0.118), equivalence is supportive rather than decisive; evidence for CPC and approval
+rate is weaker. H1a/H1b are supported, and the primary-outcome pattern is consistent with
+full mediation through spend (§5.4).
 
 ### 5.3 H1c core-model influence diagnostic [CONFIRMATORY robustness check]
 
 An influence diagnostic was applied to the primary H1c model itself, using rules fixed
 before any coefficient was inspected — the first time in this project that influence
 diagnostics were run on the confirmatory model itself rather than only on post-hoc
-exploratory sub-models (`docs/METHODOLOGY_NOTES.md` entry A4). Customer-level DFBETA
-(n=228) flagged 15/228 influential customers (threshold 2/√228 = 0.1325). These 15 are
-**not** disproportionately local-business advertisers (t-test on `share_6`, p=.53).
+exploratory sub-models (`docs/METHODOLOGY_NOTES.md` entry A4). The diagnostic is run on the
+228-advertiser core sample, which excludes the 35 lowest-spend advertisers whose sparse
+histories cannot support a stable influence statistic. Customer-level DFBETA (n=228) flagged
+15/228 influential customers (threshold 2/√228 = 0.1325). These 15 are **not**
+disproportionately local-business advertisers (t-test on `share_6`, p=.53).
 
 Three pre-specified exclusion rules were applied before any coefficient was inspected:
 (1) DFBETA influence on the size coefficient, (2) Cook's distance, and (3) standardized
@@ -358,18 +404,23 @@ docs/RESULTS_SUMMARY.md or regenerate it for the DFBETA / Cook's distance / spen
 
 | # | Method | Result | Detail |
 |---|---|---|---|
-| 1 | Specification curve (48 choices) | 0/48 reach significance | [Figure 3](#figure-3) |
+| 1 | Specification curve (48 choices: 3 platform-assigned outcomes × 16 size-tier/covariate combinations) | 0/48 reach significance | [Figure 3](#figure-3) |
 | 2 | Placebo test (device-type share) | Both real and placebo null after spend control | [Figure 3](#figure-3) |
 | 3 | Advertiser × month panel, month FE | Consistent with central estimate | — |
 | 4 | Temporal split (era1 vs era2) | Consistent | — |
 | 5 | Mechanical-artifact isolation (CPC vs bid_amount; cost-independent outcome replication) | Not a purely mechanical artifact | [Figure 7](#figure-7) |
-| 6 | Lagged-spend IV for H1b (n=98; first-stage cluster-robust F=328.15) | Corroborates sign and significance of H1b; exclusion restriction unverifiable | Table 5 in manuscript, Appendix A |
+| 6 | Lagged-spend IV for H1b (n=98; first-stage cluster-robust F=328.15) | Corroborates sign and significance of H1b; exclusion restriction unverifiable | Online Resource 1, Table S3 (and Table S4 for the subsample comparison) |
 
 FDR correction is applied to the pooled test family (§7) and is not counted as a
 robustness check of the H1c null, since a null result cannot "survive" correction. The IV
 check supports H1b only: Anderson–Rubin 95% CIs are [0.227, 0.478] (CPC) and [0.079, 0.245]
-(bid). It is not extended to H1c because the instrumented subsample is systematically
-larger and higher-spending than the core sample.
+(bid). For CPC the IV estimate (0.351) is about a quarter of the associational one (1.277)
+and the Anderson–Rubin set excludes the latter; because the instrumented subsample is
+systematically larger and higher-spending than the rest of the core sample, the gap is
+attributed to composition and instrumentation jointly. The IV check is not extended to H1c
+for the same reason: an instrumented H1c estimate describes a different subpopulation and
+can neither corroborate nor refute the full-sample result. The mean-ad-rank specification
+curve is wide (standardized coefficients ≈ −0.55 to +0.48) and constrains the sign least.
 
 <a id="figure-3"></a>
 ![Figure 3 — Multiverse specification curve and placebo test](figures/Figure3_specification_curve_placebo.png)
@@ -378,9 +429,9 @@ set), 0/48 standardized coefficients reach significance for any of the three out
 Panel B: the distributional (Kruskal–Wallis) test is significant for *both* the real
 outcome (p=.00056) and a placebo outcome (p=1.4e-08) — because size tiers correlate with
 many unrelated account traits, this alone is not a clean placebo. The informative
-comparison is the spend-controlled regression matching H2b: there, real (p=.25) and
-placebo (p=.55) outcomes are equally null (shaded region), which is the actual placebo
-evidence this figure is built to deliver.*
+comparison is the spend-controlled regression matching H1c: there, real (p=.25) and
+placebo (p=.55) outcomes are equally null (shaded region), which shows that spend absorbs
+the size association for an unrelated outcome as well; it is not a power test.*
 
 <a id="figure-7"></a>
 ![Figure 7 — Spend-mediation b-path](figures/Figure7_mediation_forest.png)
@@ -396,7 +447,8 @@ whether a stronger causal design was reachable beyond the lagged-spend IV check 
 RDD and policy-change event-study designs were screened as a supplementary exercise.
 Neither reached the bar of a usable identification strategy under customer-level
 re-analysis (0/5 RDD candidates; all 5 auto-detected event dates non-significant,
-DiD p=.16–.58). `docs/METHODOLOGY_NOTES.md` entry A1 documents that this screening informed
+DiD p=.16–.58; permutation p of event dates against random dates all ≥ .23).
+`docs/METHODOLOGY_NOTES.md` entry A1 documents that this screening informed
 how the repository frames itself: rather than treating the IV check and the
 RDD/policy-change screen as steps toward a causal claim, the repository's overall
 positioning was written as a **mediation audit** (§8) from the outset, under which these
@@ -406,7 +458,7 @@ screenings are supplementary robustness checks whose null result is *consistent 
 ### 5.5 H2 — Does the H1c relationship vary by campaign type?
 
 Stratifying the H1c model by `campaign_type` (n=184/27/17 for website/local-business/
-shopping), a joint Wald test on the size × product-type interaction gives **p=.023**. No
+shopping), a joint Wald test on the size × campaign-type interaction gives **p=.023**. No
 individual stratum is significant alone. This test — its variables, its stratification
 scheme, and its significance threshold — was specified before the central H1c regression
 was run.
@@ -422,11 +474,13 @@ overturned; confidence intervals are reconstructed from reported (β, p) via nor
 approximation since the original cluster-robust SEs were not separately persisted.*
 
 **Verdict:** H2 is supported by the asymptotic joint test but remains provisional: two
-strata are small (n=17–27) and no individual stratum is significant alone. The size
-coefficient is negative for website campaigns (−0.28; 81% of the core sample) and positive
-for local business (+0.31) and shopping (+0.25). Because website campaigns dominate the
-sample, the positive segments attenuate the pooled estimate rather than reverse it. **H2
-does not itself say where or why**; those are post-hoc questions, addressed in §6.
+strata are small (n=17–27), no individual stratum is significant alone, and the joint test
+uses the full-sample variance–covariance matrix so it need not agree with stratum-level
+tests. The size coefficient is negative for website campaigns (−0.28; 81% of the core
+sample) and positive for local business (+0.31) and shopping (+0.25). Because website
+campaigns dominate the sample, the pooled estimate (−0.253) is close to the website
+estimate, so the positive segments attenuate the pooled estimate rather than reverse it.
+**H2 does not itself say where or why**; those are post-hoc questions, addressed in §6.
 
 **H1/H2 conclusion:** *A uniform, direct advertiser-size advantage on this platform's
 algorithmic outcomes is not confirmed, and the size-net-of-spend relationship varies
@@ -446,14 +500,16 @@ tables behind every number below.
 
 ### 6.1 RQ2a — Where does the heterogeneity concentrate?
 
-Re-specifying `campaign_type` as continuous shares (rather than H2's discrete strata) in
+Re-specifying `campaign_type` as continuous expenditure shares (all five categories enter,
+rather than H2's three plurality strata, because power content and brand/new-product have no
+plurality-spend advertisers in the core sample but can still contribute a share term) in
 the customer-level panel (n=228), only the local-business share term shows majority
 agreement across a five-method robustness check:
 
 <!-- TODO(maintainer): verify the variable-to-label mapping below (share_3 vs share_6).
-The manuscript's Appendix B reports p=.0043 for the local-business share term, whereas this
-table lists baseline p=.004 under share_3 (power content) and .099 under share_6
-(local business). Confirm against the code and fix whichever side is wrong. -->
+The manuscript's Online Resource 1 (Table S8) reports p=.0043 for the local-business share
+term, whereas this table lists baseline p=.004 under share_3 (power content) and .099 under
+share_6 (local business). Confirm against the code and fix whichever side is wrong. -->
 
 | Term | Baseline p | Cluster permutation p | Pairs bootstrap excludes 0? | Wild-cluster bootstrap p | Methods agreeing (of 5) |
 |---|---|---|---|---|---|
@@ -465,14 +521,17 @@ Joint Wald test (all three interaction terms): stat=19.69, df=3, **p=.0002**.
 
 The cluster-permutation test (p=.010) and pairs-cluster bootstrap (95% CI excluding zero)
 agree with the baseline direction for the local-business share term; the wild-cluster
-bootstrap is directionally consistent but not significant. With 228 advertisers and small
-categories the asymptotic joint Wald test may be anti-conservative, which is why the
-bootstrap results are reported alongside it.
+bootstrap is directionally consistent but not significant. Shopping and power content show
+a markedly weaker, less consistent pattern. With 228 advertisers and small categories the
+asymptotic joint Wald test may be anti-conservative, which is why the bootstrap results are
+reported alongside it.
 
 **Verdict [EXPL]:** local business is the only term with majority robustness-method
-agreement — notably, this was *not* the pre-specified H2 hypothesis of interest (which
-concerned shopping, whose own baseline p=.307) and is a genuinely post-hoc observation
-about where H2's heterogeneity lives.
+agreement. The pre-specified H2 stratification did not single out local business, so the
+focus on this segment is a genuinely post-hoc observation about where H2's heterogeneity
+lives. The localized pattern is in line with work on small sellers' exposure to
+platform-design frictions (Misra et al. 2022; Hossain et al. 2021), although neither study
+addresses sponsored-search allocation.
 
 ### 6.2 RQ2b — Why might local business differ?
 
@@ -527,19 +586,28 @@ threshold for reliable cluster-robust inference), cannot support language as str
 | Audit | Result |
 |---|---|
 | Is missingness explained by pure combinatorics? | **No** — over-dispersion ratio 73×, χ²=16,583 (df=6, p<.0001); see [Figure 15](#figure-15), Appendix A |
-| Is the local-business leverage effect driven by 1–2 extreme accounts? | No sign reversal across leave-k-out (k=1,3,5,10,15) |
+| Is the local-business leverage effect driven by 1–2 extreme accounts? | No sign reversal across leave-k-out (k=1–15) |
 | Was `size_z` / `n_ad_groups_total` "control" analysis informative? | **Superseded.** `size_z` turned out to be the standardized log-transform of `n_ad_groups_total`, i.e. the *same variable under two names*, so the regression could not separate the two (VIF=∞). See `docs/METHODOLOGY_NOTES.md` entry B3 — this line of analysis was replaced by the combinatorial null model reported above, which addresses the same underlying question in a well-posed way. |
 | Was the keyword-approval-pipeline hypothesis applicable to local business? | No — 0% keyword-dimension matches; structural dead end |
 
 **SSI boundary condition.** These findings motivate **P5 (mechanism applicability)**,
 §3.3: the SSI audit design presupposes an auction-based serving mechanism, which
-local-business campaigns structurally lack. P5 is explicitly a post-hoc candidate
+local-business campaigns structurally lack. Departures from the textbook GSP are not unique
+to this platform (for example, Sogou has adopted a hybrid mechanism; Yuan & Zeng 2012).
+Given sub-cluster sizes of 13–72, this is treated as hypothesis-generating. It is
+consistent with the self-preferencing literature's point that an advantage can emerge
+mechanically from routing through a different sub-mechanism (Katz 2025; Petrucci 2023), and
+with the regulatory call to identify which sub-mechanism serves which segment before
+applying a uniform fairness standard (Graef 2026). P5 is explicitly a post-hoc candidate
 proposition, not an established one (`docs/METHODOLOGY_NOTES.md` entry B4).
 
 ### 6.3 RQ2c — Does H1's conclusion depend on local-business inclusion?
 
-**Central observation.** Excluding local-business-spending customers (n=72) from the H1c
-sample roughly doubles the point estimate and moves it toward significance:
+**Central observation.** Here local business is defined broadly (any non-zero spend; n=72
+of the 228 advertisers, unlike H2's plurality-based n=27) to test whether any exposure
+matters, not only dominant-category status. Excluding local-business-spending customers
+(n=72) from the H1c sample roughly doubles the point estimate and moves it toward
+significance:
 
 | | β | p | n |
 |---|---|---|---|
@@ -565,20 +633,23 @@ excluding website customers ranks 1st (+0.313) only because the remaining sample
 to 26 and destabilizes the estimate (shown in red); local business ranks 2nd (+0.247).
 Panel B (corrected, exclusion-size-matched empirical p, stable-remainder types only):
 local business is by far the most anomalous exclusion (1.0% empirical p) versus power
-content (66.3%) and shopping (91.7%) — reversing the raw ranking. The figure's own title
+content (66.3%) and shopping (91.7%) — reversing the raw ranking. The dashed line marks a
+20% descriptive reference level, not a significance threshold. The figure's own title
 retains the legacy "H3" label internally; this analysis is RQ2c in this README's current
 naming (`docs/METHODOLOGY_NOTES.md` entry B7).*
 
-| Excluded type (stable remainder only) | n excluded | n remaining | Empirical p | Rank |
+| Excluded type | n excluded | n remaining | Raw \|β\| shift (rank) | Corrected empirical p (rank) |
 |---|---|---|---|---|
-| **Local business** | 72 | 156 | **1.0%** | **1st** |
-| Power content | 13 | 215 | 66.3% | 2nd |
-| Shopping | 24 | 204 | 91.7% | 3rd |
+| Website | 202 | 26 | 0.313 (1st) | — (unstable, not ranked) |
+| **Local business** | 72 | 156 | 0.247 (2nd) | **1.0% (1st)** |
+| Shopping | 24 | 204 | 0.061 (3rd) | 91.7% (3rd) |
+| Power content | 13 | 215 | 0.014 (4th) | 66.3% (2nd) |
 
 A change in p from .062 to .006 is not itself a test of difference, so the placebo
 comparisons carry the inferential weight. In the auction-served segment the negative
 coefficient is a tentative signal that larger advertisers pay less net of spend (website:
-−0.28, p=.052). The positive coefficients in segments served largely outside keyword
+−0.28, p=.052; −0.499, p=.006 after excluding local-business advertisers, a post-hoc
+comparison). The positive coefficients in segments served largely outside keyword
 auctions fall outside the audit's premise (P5) and are not read as an advantage in either
 direction. Localization to local business identifies the offsetting segment, not where the
 association lies.
@@ -617,8 +688,9 @@ post hoc tests; surviving correction does not upgrade a test's status. The M-ser
 is deliberately **not** pooled into this figure — see the note below.*
 
 <!-- TODO(maintainer): regenerate Figure14 PNG with the 25-test list and 7/14 survival counts
-used in the manuscript's Appendix B; the old image shows 0/25 and 3/25. Likewise regenerate
-Figure2 with the manuscript's equivalence margins and BF range. -->
+used in the manuscript's Online Resource 1 (Sect. S6, Tables S7–S8); the old image shows
+0/25 and 3/25. Likewise regenerate Figure2 with the manuscript's equivalence margins and BF
+range. -->
 
 | Correction | Tests surviving | Which tests |
 |---|---|---|
@@ -626,11 +698,13 @@ Figure2 with the manuscript's equivalence margins and BF range. -->
 | Benjamini–Hochberg FDR (q=.05) | **14 / 25** | The seven above, plus RQ2c size-matched placebo (.004), RQ2a local-business share term (.0043), RQ2c full-vs-excluded (.006), RQ2c random-exclusion placebo (.009), RQ2a cluster permutation (.010), RQ2c leave-one-type-out local business (.010), H2 joint Wald (.023) |
 
 Inequalities (p<.001) are evaluated at .001; the four p-values not reported individually
-are set to .05, .05, .05 and 1, and setting all four to 1 leaves the counts unchanged, so
-the counts are lower bounds. Because H1c is a null result, the audit does not threaten the
-central confirmatory conclusion. Correction does not upgrade a test's status: the discount
-for RQ2a–c and P5 comes from their post hoc status, from segments of 13–72 advertisers, and
-from the asymptotic Wald test. All remain suggestive rather than confirmed.
+(shopping and power-content share terms, pairs-cluster bootstrap, unstable website
+leave-one-out) are set to .05, .05, .05 and 1, and setting all four to 1 leaves the counts
+unchanged, so the counts are lower bounds. Because H1c is a null result, the audit does not
+threaten the central confirmatory conclusion. Correction does not upgrade a test's status:
+the discount for RQ2a–c and P5 comes from their post hoc status, from segments of 13–72
+advertisers, and from the asymptotic Wald test. All remain suggestive rather than
+confirmed.
 
 **Why the M-series is excluded from this table.** The M1–M3 mitigation extension (§16)
 maintains its own, separate multiplicity accounting (§16.2, 728 tests) rather than being
@@ -661,9 +735,10 @@ RDD/policy-change screening (§5.4, Appendix A Figure 11) are framed as suppleme
 checks: the IV corroborates H1b in sign and significance but cannot verify its exclusion
 restriction, and the RDD/policy-change screens yielded no usable design. Their null or
 partial results are *consistent with, not required by,* the H1c conclusion
-(`docs/METHODOLOGY_NOTES.md` entry A1). This repository does not claim causal
-identification anywhere; every "effect" language in §5–§6 should be read as
-"association," per the mediation-audit framing.
+(`docs/METHODOLOGY_NOTES.md` entry A1). Size and spend are measured over the same window,
+so the decomposition tests conditional associations, not causal mediation. This repository
+does not claim causal identification anywhere; every "effect" language in §5–§6 should be
+read as "association," per the mediation-audit framing.
 
 ---
 
@@ -691,18 +766,20 @@ kernel-based specification (SVR-RBF) improving all three tracked gaps, a pattern
 hypothesis, not evidence. None of this changes the H1/H2/RQ2a–c conclusions above it; it is
 a downstream question about what to do given those conclusions, reported at its own, still
 more provisional, evidentiary tier throughout (§16.4–§16.6). [Figure 10](#figure-10)
-(Appendix B) additionally synthesizes this pattern alongside the descoped Study 2
-companion, for readers curious how the two independent samples/time axes compare — but
-that comparison itself is out of this repository's current evidence base.
+(Appendix B) additionally synthesizes this pattern alongside the descoped companion study,
+for readers curious how the two independent samples/time axes compare — but that
+comparison itself is out of this repository's current evidence base.
 
-**Notes toward downstream use (not yet developed into paper prose).** Two threads worth
-flagging for whoever drafts the manuscript from this material: (1) the H1/H2 result reads
-naturally as a procedural-fairness finding about the platform's dominant auction mechanism,
-while the M-series reads as a distributive-fairness *design* question — these are
-distinct literatures and probably deserve separate framing in the paper's contribution
-statement; (2) the multiplicity audit (§7; 7/25 Bonferroni, 14/25 FDR) is an asset for a
-methods-forward journal, provided the post hoc status of the surviving exploratory tests is
-stated.
+**Notes on the manuscript framing.** Two threads shape how the manuscript presents this
+material: (1) the H1/H2 result reads naturally as a procedural-fairness finding about the
+platform's dominant auction mechanism, while the M-series reads as a distributive-fairness
+*design* question — these are distinct literatures, and the manuscript therefore reports
+the M-series as a short exploratory extension rather than a main contribution; (2) the
+multiplicity audit (§7; 7/25 Bonferroni, 14/25 FDR) is an asset for a methods-forward
+journal, provided the post hoc status of the surviving exploratory tests is stated. The
+manuscript's main lesson for auditors is that a pooled estimate can mask opposite-signed
+segment effects, so SSI should be tested separately for each serving mechanism, with
+segment-level directions reported.
 
 ---
 
@@ -719,19 +796,24 @@ This repository's confirmatory finding concerns **procedural fairness** only (do
 confer a direct advantage). The M-series extension (§16) is a step toward a
 **distributive-fairness intervention** question (can a documented gap be narrowed) but
 remains silent on whether doing so is normatively desirable, and on any metric beyond
-RMSE, `size_gap`, and `localbiz_gap`.
+RMSE, `size_gap`, and `localbiz_gap`. The findings are audit-design guidance, not a
+certification standard, and rest on one platform in one country.
 
 ---
 
 ## 11. Limitations
 
 **Confirmatory tier (H1, H2).**
-1. Single-platform sample; generalizability to other ad platforms is untested.
+1. Single-platform, single-country sample, with a size measure (campaign count) specific to
+   that platform's account structure; generalizability to other ad platforms is untested. A
+   replication would need a platform with distinct serving mechanisms, a size measure not
+   derived from spend, and the same four model classes with separately tuned baselines.
 2. The lagged-spend 2SLS check corroborates H1b only and cannot verify its exclusion
    restriction; it is not extended to H1c because the instrumented subsample differs
    systematically from the core sample. No causal claim is made.
-3. H2's individual strata are each non-significant; only the joint interaction test is
-   significant, limiting how much can be said about any one campaign type from H2 alone.
+3. H2's individual strata are each non-significant; only the joint interaction test
+   (asymptotic) is significant, limiting how much can be said about any one campaign type
+   from H2 alone.
 4. Conversion/ROAS outcomes are excluded by design (P4) — SSI is untestable, not violated,
    in that outcome family.
 
@@ -767,15 +849,16 @@ RMSE, `size_gap`, and `localbiz_gap`.
     strategies have not received the same treatment (Campaign-stratified was re-tested but
     is inconclusive, §16.3.1).
 14. No SHAP or partial-dependence mechanism check has yet been run to explain *why*
-    SVR-RBF succeeds where OLS/HistGB do not.
+    SVR-RBF succeeds where OLS/HistGB do not; the SVR-RBF result awaits interpretability
+    analysis and an independent temporal holdout.
 15. The mitigation cutoff evaluated is `cut0.00` only; no cutoff-sensitivity check, and no
     independent-sample replication, has been run (§16.6).
 
 **Additional limitations aligned with the manuscript.**
 16. The primary outcome is an advertiser-set registered bid that differs from the effective
-    bid, so the primary null speaks to advertiser behavior, not platform allocation. The
-    primary equivalence margin exceeds the total effect, and H2 is estimated on the
-    CPC-based outcome only.
+    bid, so the primary null speaks to advertiser behavior, not platform allocation. CPC-
+    and bid-based results differ in size and significance, the primary equivalence margin
+    exceeds the total effect, and H2 is estimated on the CPC-based outcome only.
 17. OLS results in the M-series are inconsistent across analyses (gate null, scan-candidate
     null, and +0.082 in the model-class re-test come from separate bootstrap runs and are
     not reconciled) and are not interpreted. Baseline and size-blind SVR-RBF were not tuned
@@ -820,13 +903,13 @@ All figures live as standalone PNGs in [`figures/`](figures/).
 | 1 | Multilevel variance decomposition | §5.1 | Confirmatory, preliminary |
 | 2 | Advertiser-size effect on approval/CPC/rank | §5.2 | Confirmatory |
 | 3 | Multiverse specification curve & placebo | §5.4 | Confirmatory |
-| 4 | Churn-prediction benchmarking | Appendix A | Exploratory appendix (RQ3, unrelated to H1/H2) |
-| 5 | Cold-start funnel & RQ1 null | Appendix B | Out of scope (Study 2) |
-| 6 | Cold-start early-signal prediction & intervention timing | Appendix B | Out of scope (Study 2) |
+| 4 | Churn-prediction benchmarking | Appendix A | Exploratory appendix (legacy "RQ3" label, unrelated to H1/H2 and to the manuscript's RQ3) |
+| 5 | Cold-start funnel & RQ1 null | Appendix B | Out of scope (legacy Study 2) |
+| 6 | Cold-start early-signal prediction & intervention timing | Appendix B | Out of scope (legacy Study 2) |
 | 7 | Spend-mediation b-path | §5.4 | Confirmatory |
 | 8 | Campaign product-type heterogeneity | §5.5 | Confirmatory |
-| 9 | TOST equivalence tests | Appendix B | Out of scope (Study 2) |
-| 10 | Integrated framework (Study 1 + Study 2) | Appendix B | Out of scope — spans the descoped Study 2 |
+| 9 | TOST equivalence tests | Appendix B | Out of scope (legacy Study 2) |
+| 10 | Integrated framework (Study 1 + legacy Study 2) | Appendix B | Out of scope — spans the descoped companion study |
 | 11 | Alternative-identification screening (RDD & policy-change) | Appendix A | Supplementary robustness (§5.4) |
 | 12 | Leave-one-campaign-type-out (RQ2c) | §6.3 | Post-hoc exploratory |
 | 13 | Serving-structure heterogeneity | §6.2 | Post-hoc exploratory |
@@ -837,10 +920,10 @@ All figures live as standalone PNGs in [`figures/`](figures/).
 | 18 | Mitigation study evidentiary process | §16 | Post-hoc, further exploratory (methods diagram) |
 | 19 | Campaign-stratified model-class bootstrap (vs Size-blind) | §16.3.1 | Post-hoc, further exploratory |
 
-Figures 1, 2, 3, 7, 8, 13, 16, 17, 18, and 19 are embedded in the body above; Figure 14 is
-embedded in §7 as the calibration device the whole README depends on; Figures 4, 11, 12,
+Figures 1, 2, 3, 7, 8, 12, 13, 14, 16, 17, 18, and 19 are embedded in the body above
+(Figure 14 in §7 as the calibration device the whole README depends on); Figures 4, 11,
 and 15 are in [Appendix A](#appendix-a--supplementary-figures); Figures 5, 6, 9, and 10
-belong to the descoped Study 2 companion and are named, not shown, in
+belong to the descoped companion study and are named, not shown, in
 [Appendix B](#appendix-b--out-of-scope-figures-study-2).
 
 ---
@@ -927,24 +1010,25 @@ structural-signal-irrelevance/
 │   └── DESIGN_ARTIFACT.md
 └── manuscript_prep/
     ├── literature_anchors.md       (working list — see Appendix C below)
-    └── paperization_notes.md       (open threads flagged in §9 "Notes toward downstream use")
+    └── paperization_notes.md       (open threads flagged in §9 "Notes on the manuscript framing")
 ```
 
 **Newly added in this revision:** `supplementary_mitigation_study/` (all M-series pipeline
 outputs), `figures/scripts/` (per-figure generation scripts for Figures 16–18, split out
 per this repository's one-script-per-figure convention), Figures 16–18 themselves, an
 extended `appendix/hypothesis_id_legacy_mapping.md` covering the M-series legacy label, and
-a new `manuscript_prep/` directory to hold the literature-anchor list and open framing
-questions flagged in this revision — intended as scaffolding for a future, separate
-paper-writing pass rather than manuscript content itself. Filenames under
-`supplementary_mitigation_study/` use this README's own naming (`mitigation_*`) rather
-than any legacy pipeline label, consistent with `docs/METHODOLOGY_NOTES.md` entry B8.
+a `manuscript_prep/` directory to hold the literature-anchor list and open framing
+questions — scaffolding for the manuscript rather than manuscript content itself.
+Filenames under `supplementary_mitigation_study/` use this README's own naming
+(`mitigation_*`) rather than any legacy pipeline label, consistent with
+`docs/METHODOLOGY_NOTES.md` entry B8.
 
 ---
 
 ## 15. How to Reproduce
 
-1. Request a schema-compatible data extract (`data/README.md`).
+1. Request a schema-compatible data extract (`data/README.md`), or run the pipeline on the
+   released schema-matched synthetic replication dataset.
 2. Run the H1/H2 pipeline (`run_pipeline_v4.sh`) to reproduce §5, including Figures 1, 2,
    3, 7, and 8.
 3. Run `supplementary_localbiz_exploratory/localbiz_core_analysis.py` to reproduce §6,
@@ -976,6 +1060,23 @@ modify the platform's allocation algorithm, which is unobservable, and concerns
 prediction-error gaps, not the fairness of the platform's own system. See
 [`docs/RESULTS_SUMMARY.md`](docs/RESULTS_SUMMARY.md) §§12–14 for the complete statistical
 tables behind M0, M1, and M2/M3.
+
+**Rationale and metrics.** Because size and spend are correlated (H1a) and local-business
+campaigns are decoupled from the auction-based spend-to-outcome pathway (§6.2), a model
+could learn a pattern that disadvantages local-business advertisers partly through
+size-correlated features, even without an explicit local-business flag. This motivates
+testing whether dropping size (the "Size-blind" strategy) narrows the local-business gap
+alongside the size gap. Performance is tracked with out-of-fold RMSE of CPC and two gaps in
+mean signed prediction error ê:
+
+- `size_gap` = E[ê | SIZE = large] − E[ê | SIZE = small]
+- `localbiz_gap` = E[ê | local business] − E[ê | other campaigns]
+
+Across the cells of the scan (Figure 17) the size gap (0.10–0.44) and the local-business
+gap (0.05–0.28) are positive, so a negative Δ narrows a gap and a positive Δ widens it. All
+strategy–model cells share the same train/test folds within a cross-validation repetition.
+The labels "improve"/"harm" are applied only to the local-business gap, which RQ2a–RQ2c
+identified as the concentrated disparity; the size gap is a secondary diagnostic.
 
 ### 16.1 M0 — Pre-registered gate
 
@@ -1013,10 +1114,10 @@ chosen after seeing which scan cell performed best.*
 
 | Scan parameter | Value |
 |---|---|
-| Candidate strategies | up to 12 (Baseline; Size-blind; Spend-normalized; Campaign/Interaction-adaptive; Campaign-stratified; residualized and worst-group variants) |
+| Candidate strategies | up to 12, grouped into four families (Baseline; Size-blind; Spend-normalized; Campaign/Interaction-adaptive, including Campaign-stratified, residualized and worst-group variants) |
 | Candidate models | 9 (OLS, Ridge, Lasso, ElasticNet, BayesianRidge, RandomForest, HistGB-squared, HistGB-MAE, SVR-RBF) |
-| Cross-validation | repeated 5-fold × 30-repetition customer-shuffle |
-| Total statistical tests (widest pass) | 728 |
+| Cross-validation | repeated 5-fold × 30-repetition advertiser-level (customer-shuffle) |
+| Total statistical tests (widest pass; raw and log-CPC scales, several variants per strategy) | 728 |
 | Tests surviving Benjamini–Hochberg FDR | **463 / 728** |
 
 <a id="figure-17"></a>
@@ -1027,22 +1128,24 @@ strategies × 9 models) plotted as RMSE (x) vs. `size_gap` (y), with bubble size
 both the worst RMSE and among the largest local-business gaps. Spend-normalized (orange)
 clusters toward higher RMSE across the board. Size-blind (blue) clusters toward the
 lower-left, with Size-blind × SVR-RBF annotated as dominating its own baseline on all three
-metrics. It is not Pareto-optimal across the landscape (size-blind random forest and
-another size-blind cell reach lower RMSE with comparable size gaps), and Baseline ×
-SVR-RBF has the highest baseline RMSE (≈1.37 vs. 1.16–1.25), so part of the improvement may
-reflect recovery from a poorly conditioned baseline.*
+metrics (RMSE 1.37 → 1.24; size gap 0.30 → 0.10). It is not Pareto-optimal across the
+landscape (size-blind random forest and another size-blind cell reach lower RMSE with
+comparable size gaps), and Baseline × SVR-RBF has the highest baseline RMSE (≈1.37 vs.
+1.16–1.25), so part of the improvement may reflect recovery from a poorly conditioned
+baseline.*
 
 **Independent confirmation check.** Because FDR correction alone does not protect against
-reporting the specific cell that was *selected* for looking best within the same
-108-combination search, an independent bootstrap was run on the two FDR-flagged candidates
-with comparable earlier tooling (OLS, HistGB-squared). Neither reproduced the pattern the
-scan implied: the OLS combination showed no effect (95% CI included 0), and the
-HistGB-squared combination moved in the opposite direction (95% CI entirely positive — the
-gap widened rather than narrowed). `docs/METHODOLOGY_NOTES.md` entry B9 documents why this
-check was added and how it shaped the re-test design below.
+reporting the specific cell that was *selected* for looking best within the same search (a
+winner's-curse concern; Andrews, Kitagawa & McCloskey 2024), an independent bootstrap was
+run on the two FDR-flagged candidates with comparable earlier tooling (OLS,
+HistGB-squared). Neither reproduced the pattern the scan implied: the OLS combination
+showed no effect (95% CI included 0), and the HistGB-squared combination moved in the
+opposite direction (95% CI entirely positive — the gap widened rather than narrowed).
+`docs/METHODOLOGY_NOTES.md` entry B9 documents why this check was added and how it shaped
+the re-test design below.
 
-**Verdict [EXPL-M, hypothesis-generating]:** the 108-combination scan is retained as a map
-of the strategy-model landscape and a source of candidate hypotheses, with individual
+**Verdict [EXPL-M, hypothesis-generating]:** the scan is retained as a map of the
+strategy-model landscape and a source of candidate hypotheses, with individual
 FDR-significant cells treated as leads rather than as standalone evidence. §16.3 reports
 the one candidate (Size-blind, crossed with four pre-specified model classes) that
 received an independent, pre-specified re-test.
@@ -1050,8 +1153,10 @@ received an independent, pre-specified re-test.
 ### 16.3 M2/M3 — Independent, pre-specified-model-class re-test
 
 Four model classes were pre-specified for **theoretical representativeness — not scan
-performance** — and crossed with a single strategy, Size-blind. Fresh customer-cluster
-bootstrap, 200 reps, evaluated against Baseline.
+performance** — spanning distinct functional forms (OLS, linear; HistGB and RandomForest,
+boosting versus bagging tree ensembles; SVR-RBF, kernel) and crossed with a single
+strategy, Size-blind. Fresh customer-cluster bootstrap, 200 reps, evaluated against
+Baseline.
 
 <a id="figure-16"></a>
 ![Figure 16 — Effect of the Size-blind strategy by model class](figures/Figure16_mitigation_model_class_bootstrap.png)
@@ -1059,7 +1164,7 @@ bootstrap, 200 reps, evaluated against Baseline.
 (Size-blind minus Baseline), each with a 95% customer-cluster bootstrap CI (200 reps),
 across four pre-specified model classes. OLS and HistGB show no RMSE/size effect (gray) but
 a significant local-business-gap *increase* (orange — a trade-off worth flagging; the OLS
-result is not interpreted, §16.1). RandomForest significantly improves RMSE and size_gap
+result is not interpreted, §16.1). RandomForest significantly lowers RMSE and size_gap
 (blue) but still shows a smaller, significant local-business-gap increase (orange). Only
 SVR-RBF shows significant improvement on **all three** metrics simultaneously (blue
 throughout).*
@@ -1067,22 +1172,28 @@ throughout).*
 | Model | Class | ΔRMSE [95% CI] | Δsize_gap [95% CI] | Δlocalbiz_gap [95% CI] | Verdict |
 |---|---|---|---|---|---|
 | OLS | Linear / unregularized | +0.010 [−0.006, +0.027] | −0.018 [−0.043, +0.009] | **+0.082 [+0.051, +0.114]** | No RMSE/size effect; local-business gap widens (not interpreted; §16.1) |
-| HistGB (squared loss) | Gradient-boosted trees | +0.006 [−0.012, +0.024] | +0.004 [−0.021, +0.030] | **+0.031 [+0.008, +0.055]** | No RMSE/size effect; local-business gap **widens** |
-| RandomForest | Bagged tree ensemble | **−0.074 [−0.096, −0.052]** | **−0.167 [−0.201, −0.134]** | **+0.028 [+0.006, +0.051]** | Significant **improvement** on RMSE/size; local-business gap widens slightly |
-| SVR-RBF | Kernel machine | **−0.129 [−0.151, −0.107]** | **−0.200 [−0.231, −0.168]** | **−0.077 [−0.094, −0.059]** | Significant **improvement** on all three metrics simultaneously |
+| HistGB (squared loss) | Gradient-boosted trees | +0.006 [−0.012, +0.024] | +0.004 [−0.021, +0.030] | **+0.031 [+0.008, +0.055]** | No RMSE/size effect; local-business gap **widens** (harm) |
+| RandomForest | Bagged tree ensemble | **−0.074 [−0.096, −0.052]** | **−0.167 [−0.201, −0.134]** | **+0.028 [+0.006, +0.051]** | RMSE and size gap narrow; local-business gap widens slightly (harm) |
+| SVR-RBF | Kernel machine | **−0.129 [−0.151, −0.107]** | **−0.200 [−0.231, −0.168]** | **−0.077 [−0.094, −0.059]** | All three metrics narrow simultaneously (local-business gap: improve) |
 
 **Headline pattern (M3):** the effect of the Size-blind strategy on the local-business gap
 differs by model class. Under HistGB and RandomForest the gap widens, whereas under SVR-RBF
 it narrows; OLS is not interpreted because its results are inconsistent across analyses
 (§16.1, §16.2). The two gaps need not move together: under RandomForest the size gap
-narrows and accuracy improves, yet the local-business gap widens. No claim is made about
-flexibility ordering, since no metric orders the four classes.
+narrows (−0.167) and accuracy improves (ΔRMSE −0.074), yet the local-business gap widens
+(+0.028). No claim is made about flexibility ordering, since no metric orders the four
+classes. The pattern is in line with findings that no classifier is uniformly best on
+fairness–accuracy trade-offs (Corbett-Davies et al. 2017; Caton & Haas 2024) and is
+compatible with proxy re-emergence (Prince & Schwarcz 2019; Cofone 2018), which is not
+tested here.
 
 **Verdict [EXPL-M, independently re-tested]:** the most informative pattern in the
 M-series, since the model classes were fixed before seeing which cell performed best. It
-remains a hypothesis: the SVR-RBF baseline is the least accurate, baseline and size-blind
-models were not tuned separately, and the pattern comes from a single bootstrap not
-independently replicated. It is not evidence that kernel models are fairer.
+remains a hypothesis: the SVR-RBF baseline is the least accurate (RMSE ≈ 1.37 vs.
+1.16–1.25), baseline and size-blind models were not tuned separately, and the pattern comes
+from a single bootstrap not independently replicated. It is not evidence that kernel models
+are fairer, and it cautions against assuming that dropping a structural variable works
+across model classes.
 
 ### 16.3.1 M2/M3 extended — Campaign-stratified (S9) independent re-test
 
@@ -1150,7 +1261,7 @@ anywhere in this repository; it is flagged here as a candidate direction for
 §16.3.1 is inconclusive and does not extend the model-dependence pattern. No general claim
 about model flexibility is made; the link between mechanism applicability and
 model-dependent mitigation is identified only as a candidate for a pre-specified
-confirmatory follow-up (`FUTURE_RESEARCH_STUDY3.md`).
+confirmatory follow-up on a second platform (`FUTURE_RESEARCH_STUDY3.md`).
 
 ### 16.6 Outstanding validation debt
 
@@ -1166,7 +1277,8 @@ confirmatory follow-up (`FUTURE_RESEARCH_STUDY3.md`).
 - S9_plus_S1 (the combined strategy) was not part of the M1 scan, so it should not be
   adopted on the strength of this single re-test result alone.
 - No SHAP or partial-dependence mechanism check has been run to explain *why* SVR-RBF in
-  particular achieves simultaneous improvement.
+  particular achieves simultaneous improvement, and no independent temporal holdout has
+  been used.
 - The mitigation cutoff evaluated throughout is `cut0.00` only; no cutoff-sensitivity
   check has been run.
 - No independent sample has been used to replicate the M2/M3 result; all bootstrapping is
@@ -1187,27 +1299,27 @@ needed on a first read.
 
 <a id="figure-4"></a>
 ![Figure 4 — Churn-prediction benchmarking](figures/Figure4_churn_benchmark.png)
-*Figure 4 [exploratory appendix, RQ3 — unrelated to H1/H2/RQ2a–c] — an unrelated
-churn-prediction exploratory appendix comparing logistic regression, random forest, and
-gradient boosting on a severely imbalanced 213-account labeled sample (2.35% churn). All
-pairwise Wilcoxon comparisons are p=0.0625 (n=5 repeat-pairs, the maximum possible
-significance with this many pairs) — models are statistically indistinguishable from one
-another, and F1=0 for all models at the default threshold is expected given the class
-imbalance, not reported as a modeling failure. This figure's embedded pipeline-stage label
-is unrelated to this README's H1/H2/RQ2a–c/M1–M3 structure (see the note at the top of this
-README).*
+*Figure 4 [exploratory appendix, legacy "RQ3" label — unrelated to H1/H2/RQ2a–c and to the
+manuscript's RQ3] — an unrelated churn-prediction exploratory appendix comparing logistic
+regression, random forest, and gradient boosting on a severely imbalanced 213-account
+labeled sample (2.35% churn). All pairwise Wilcoxon comparisons are p=0.0625 (n=5
+repeat-pairs, the maximum possible significance with this many pairs) — models are
+statistically indistinguishable from one another, and F1=0 for all models at the default
+threshold is expected given the class imbalance, not reported as a modeling failure. This
+figure's embedded pipeline-stage label is unrelated to this README's H1/H2/RQ2a–c/M1–M3
+structure (see the note at the top of this README).*
 
 <a id="figure-11"></a>
 ![Figure 11 — Alternative-identification screening: RDD & policy-change event studies](figures/Figure11_identification_screening.png)
 *Figure 11 [supplementary robustness for §5.4] — Panel A: five bandwidth-robust RDD
-candidates, screened for donut-hole breakdown fragility; two show customer-level density
-test failures suggesting manipulation, three show non-significant customer-level effects
-even at the largest tested donut hole. Verdict: 0/5 candidates survive as a usable RDD
-design. Panels B–C: a structural-break event-study DiD across five auto-detected
-candidate dates, none of which is statistically distinguishable from a randomly chosen
-date (all permutation p > .05). Both strategies are reported as supplementary robustness
-checks that did not yield an adopted identification design, per
-`docs/METHODOLOGY_NOTES.md` entry A1.*
+candidates, screened for donut-hole breakdown fragility; the two spend cutoffs fail the
+density test (p=.001 and <.001), while the three size cutoffs show no discontinuity at the
+customer level (p=.79, .40, and .05 — the last cutoff, 2.515, has no institutional basis).
+Verdict: 0/5 candidates survive as a usable RDD design. Panels B–C: a structural-break
+event-study DiD across five auto-detected candidate dates, none of which is statistically
+distinguishable from a randomly chosen date (all permutation p ≥ .23). Both strategies are
+reported as supplementary robustness checks that did not yield an adopted identification
+design, per `docs/METHODOLOGY_NOTES.md` entry A1.*
 
 <a id="figure-15"></a>
 ![Figure 15 — Combinatorial null model for missingness](figures/Figure15_combinatoric_null_model.png)
@@ -1223,6 +1335,10 @@ the cause of the residual clustering itself remains unidentified.*
 
 ## Appendix B — Out-of-Scope Figures (Study 2)
 
+> **Naming note.** "Study 2" in this appendix is a legacy name for a separate, descoped
+> longitudinal companion study. It is **not** the manuscript's Study 2, which corresponds
+> to RQ2a–RQ2c (§6) in this repository.
+
 Figures 5, 6, 9, and 10 belong to a **descoped longitudinal companion study** (n=29
 customers, 204 ad groups, an independent sample from this repository's cross-sectional
 321-advertiser data) and are **not part of this repository's evidence base**. They are
@@ -1231,29 +1347,29 @@ applied throughout this README — not embedded, and not cited as supporting any
 §5, §6, or §16 above.
 
 - **Figure 5 — Cold-start sample construction and RQ1 confirmatory test.** Documents the
-  Study-2 sample funnel (250 cold-start candidates → 204 complete-window observations) and
-  a confirmatory null (Spearman ρ=−0.020, p=.92) on whether account maturity predicts
-  initial 30-day growth slope.
+  companion-study sample funnel (250 cold-start candidates → 204 complete-window
+  observations) and a confirmatory null (Spearman ρ=−0.020, p=.92) on whether account
+  maturity predicts initial 30-day growth slope.
 - **Figure 6 — Cold-start early-signal prediction (RQ2) and intervention-timing
   simulation (RQ3).** Shows that apparent prediction gains from adding account maturity
   are almost entirely between-customer, not within-customer — i.e., the same null pattern
   as Figure 5's RQ1 result leaking into a downstream prediction task — and that no single
   intervention decision day (7/14/21 days post-registration) is statistically defensible.
-- **Figure 9 — TOST equivalence tests for the two central Study-2 null results.** Neither
-  the RQ1 (maturity → growth slope) nor the RQ2/H2b (maturity → prediction improvement)
-  null is formally established as equivalent-to-zero by TOST (both p > .19) — an honest
-  disclosure that Study 2's null results are undersized to distinguish "no effect" from
-  "insufficient power."
-- <a id="figure-10"></a>**Figure 10 — Integrated framework (Study 1 + Study 2).** A side-by-side diagram showing
+- **Figure 9 — TOST equivalence tests for the two central companion-study null results.**
+  Neither the RQ1 (maturity → growth slope) nor the RQ2/H2b (maturity → prediction
+  improvement) null is formally established as equivalent-to-zero by TOST (both p > .19) —
+  an honest disclosure that the companion study's null results are undersized to
+  distinguish "no effect" from "insufficient power."
+- <a id="figure-10"></a>**Figure 10 — Integrated framework (Study 1 + companion Study 2).** A side-by-side diagram showing
   that both this repository's cross-sectional sample (Study 1: advertiser size → spend →
-  algorithmic outcome) and the descoped longitudinal sample (Study 2: account maturity →
-  ad group's own early signal → near-term growth) independently find no direct path from a
-  structural attribute to an algorithmic outcome, with a real-time behavioral signal doing
-  the explanatory work in both. This is a suggestive cross-study pattern, not a joint
-  statistical test, and depends on a study (Study 2) that is not part of this repository's
+  algorithmic outcome) and the descoped longitudinal sample (companion Study 2: account
+  maturity → ad group's own early signal → near-term growth) independently find no direct
+  path from a structural attribute to an algorithmic outcome, with a real-time behavioral
+  signal doing the explanatory work in both. This is a suggestive cross-study pattern, not
+  a joint statistical test, and depends on a study that is not part of this repository's
   current evidence base.
 
-Design and version-history detail for the Study-2-dependent flagging-rule artifact
+Design and version-history detail for the companion-study-dependent flagging-rule artifact
 referenced by earlier drafts of this repository has moved to
 [`FUTURE_RESEARCH_STUDY2.md`](FUTURE_RESEARCH_STUDY2.md); see
 [`docs/DESIGN_ARTIFACT.md`](docs/DESIGN_ARTIFACT.md) for the redirect stub and the reasons
@@ -1263,47 +1379,78 @@ that artifact has no remaining basis in this repository's current scope.
 
 ## Appendix C — Literature Anchors for Future Paper-Writing
 
-This appendix is new in this revision. It is deliberately kept as a flat working list —
-not integrated prose — since literature integration is planned as a separate pass. Items
-are grouped by the theoretical role they would play if the repository is developed into a
-manuscript; none of the empirical claims above have been revised to reflect them.
+This appendix is kept as a flat working list — not integrated prose. The manuscript now
+integrates much of this literature (see its reference list); the list below records which
+anchors play which theoretical role and which candidates remain unused. None of the
+empirical claims above have been revised to reflect them.
 
-**Statistical discrimination / structural-proxy literature (already anchors §3.1):**
+**Statistical discrimination / structural-proxy literature (anchors §3.1):**
 - Phelps, E. S. (1972). The statistical theory of racism and sexism. *American Economic
   Review, 62*(4), 659–661.
 - Arrow, K. J. (1973). The theory of discrimination. In *Discrimination in Labor Markets*.
   Princeton University Press.
-- Spence, M. (1973). Job market signaling. *Quarterly Journal of Economics, 87*(3),
-  355–374.
+- Spence, M. (1978). Job market signaling. In *Uncertainty in Economics* (pp. 281–306).
+  Academic Press.
 
-**Algorithmic fairness / individual fairness (already anchors §3.1):**
+**Algorithmic fairness / individual fairness (anchors §3.1, §16):**
 - Dwork, C., Hardt, M., Pitassi, T., Reingold, O., & Zemel, R. (2012). Fairness through
   awareness. *Proceedings of ITCS 2012*, 214–226.
+- Corbett-Davies, S., Pierson, E., Feller, A., Goel, S., & Huq, A. (2017). Algorithmic
+  decision making and the cost of fairness. *Proceedings of ACM SIGKDD 2017*, 797–806.
+- Caton, S., & Haas, C. (2024). Fairness in machine learning: A survey. *ACM Computing
+  Surveys, 56*(7), 1–38.
+- Prince, A. E., & Schwarcz, D. (2019). Proxy discrimination in the age of artificial
+  intelligence and big data. *Iowa Law Review, 105*, 1257.
 
-**Algorithm auditing methodology (already anchors §8):**
+**Algorithm auditing methodology (anchors §8):**
 - Sandvig, C., Hamilton, K., Karahalios, K., & Langbort, C. (2014). Auditing algorithms:
   Research methods for detecting discrimination on internet platforms.
 - Metaxa, D. et al. (2021). Auditing algorithms: Understanding algorithmic systems from
   the outside in. *Foundations and Trends in Human–Computer Interaction, 14*(4), 272–344.
 - Raji, I. D. et al. (2020). Closing the AI accountability gap. *Proceedings of FAT\* 2020*,
   33–44.
+- Simonsohn, U., Simmons, J. P., & Nelson, L. D. (2020). Specification curve analysis.
+  *Nature Human Behaviour, 4*(11), 1208–1214.
+- Andrews, I., Kitagawa, T., & McCloskey, A. (2024). Inference on winners. *Quarterly
+  Journal of Economics, 139*(1), 305–358.
 
-**Not yet integrated — candidates for the sponsored-search / e-commerce marketplace
-context that §3–§5 currently lack:**
+**Sponsored-search / e-commerce marketplace context (integrated in the manuscript):**
 - Edelman, B., Ostrovsky, M., & Schwarz, M. (2007). Internet advertising and the
   generalized second-price auction. *American Economic Review, 97*(1), 242–259.
+- Yuan, Y., & Zeng, D. (2012). Co-evolution-based mechanism design for sponsored search
+  advertising. *Electronic Commerce Research and Applications, 11*(6), 537–547.
+- Vragov, R., Shang, R., Smith, V., & Porter, D. (2019). Let's play the search game:
+  Strategic and behavioral properties of sponsored search auction mechanisms. *Electronic
+  Commerce Research and Applications, 33*, 100809.
+- Celis, L. E., Lewis, G., Mobius, M., & Nazerzadeh, H. (2014). Buy-it-now or take-a-chance:
+  Price discrimination through randomized auctions. *Management Science, 60*(12),
+  2927–2948.
+- Jürgensmeier, L., & Skiera, B. (2025). Measuring self-preferencing on digital platforms.
+  *Journal of Marketing.*
+- Farronato, C., Fradkin, A., & MacKay, A. (2023). Self-preferencing at Amazon: Evidence
+  from search rankings. *AEA Papers and Proceedings, 113*, 239–243.
+- Etro, F. (2024). E-commerce platforms and self-preferencing. *Journal of Economic
+  Surveys, 38*(4), 1516–1543.
+- Katz, M. L. (2025). Does it matter if competition is "fair" or "on the merits"? An
+  application to platform self-preferencing. *Review of Industrial Organization, 66*(1),
+  43–70.
+- Petrucci, C. F. (2023). Self-preferencing in the EU: A legal and policy analysis of the
+  Google Shopping case and the Digital Markets Act. *Competition Law Journal, 22*(1),
+  18–29.
+- Graef, I. (2026). A fairness standard in EU platform regulation. *Computer Law &
+  Security Review, 62*, 106389.
+
+**Not yet integrated — remaining candidates:**
 - Varian, H. R. (2007). Position auctions. *International Journal of Industrial
   Organization, 25*(6), 1163–1178.
 - Athey, S., & Ellison, G. (2011). Position auctions with consumer search. *Quarterly
   Journal of Economics, 126*(3), 1213–1270.
-- Additional candidates to source during the literature-review pass: work on small-seller/
-  small-advertiser equity on e-commerce marketplaces, ranking-algorithm design and
-  platform self-preferencing, and empirical audits of ad-auction outcomes by seller
+- Additional candidates to source: work on small-seller/small-advertiser equity on
+  e-commerce marketplaces and empirical audits of ad-auction outcomes by seller
   characteristics.
 
-**Open framing question for the paper-writing pass (not resolved here):** whether the
-manuscript should be framed primarily as a platform-fairness/algorithmic-audit
-contribution (leaning on the Sandvig/Metaxa/Raji stream) or primarily as a search-
-advertising-market-design contribution (leaning on the Edelman/Varian/Athey-Ellison
-stream) will shape which introduction and discussion framing to write; this repository's
-current evidentiary structure supports either framing equally well.
+**Framing question (resolved in the manuscript):** the manuscript is framed as an
+audit-design contribution for electronic markets — test SSI separately for each serving
+mechanism — drawing on both the audit stream (Sandvig/Metaxa/Raji) and the
+search-advertising-market-design stream (Edelman/Yuan & Zeng/Vragov). This repository's
+evidentiary structure supports either framing equally well.
