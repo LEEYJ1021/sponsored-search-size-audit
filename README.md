@@ -1,9 +1,5 @@
 # Observable but not readable: what outside audits can say about how platforms treat small advertisers in South Korea
 
-**Replication code and documentation for the size–CPC audit (structural signal irrelevance, SSI), the companion repository to the manuscript of the same title.**
-
-> *Working title of earlier drafts and of this repository:* "What Can a Conditional Advertiser-Size Statistic Show? Auditing Sponsored Search under Incomplete Observability in South Korea".
-
 > **Status and how to read this repository.** This is a research repository documenting the analysis pipeline behind the manuscript. It is not a publication, and nothing here should be cited as a peer-reviewed result. Where wording differs, **the manuscript is the authoritative statement of results**. The repository covers one platform, one observation window and one linear conditional statistic. It makes **no fairness, discrimination or causal claim**: every coefficient is a conditional association, and the manuscript's central point is what such a statistic can and cannot support when the serving structure is only partly observable.
 
 ---
